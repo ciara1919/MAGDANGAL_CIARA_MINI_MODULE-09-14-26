@@ -149,7 +149,88 @@ def main():
                break
            else:
               print(\nInvalid choice. Please enter a number from 0 to 5. ")
-              
+
+#SECTION 3: EXPONENTIATION AND LOGARITHMS 
+        
+def main():
+    print("=" * 70)
+    print("Welcome to the math and random module explorer")
+    print("A learning tool pythons 'math'and 'random' modules")
+    
+    while True:
+        print("""
+        MAIN MENU
+        1. Trigonometric (cercular) functions    - sin, cos, tan, pi,radians...
+        2.Hyperbolic functions                   -sinh, cosh, tanh,asinh...
+        3. Exponential & logarithmic functions   -e, exp, log, log10, log2, pow
+        4. General-purpose math functions        - ceil, floor, trunc, factorial,hypot
+        5. Random module                         - seed, randrange, randint, choice, sample
+        0. Exit program
+        """)
+        
+        choice = safe_input("Enter your choice (0-5): ").strip()
+        if choice =='1':
+            trig_menu()
+        elif choice =='2':
+            hyperbolic_menu()
+        elif choice =='3':
+            exponent_menu()
+        elif choice =='4':
+            general_menu()
+        elif choice=='5':
+            random_menu()
+        elif choice == '0':
+            print("\nThank you for exploring the math and random modules." "Goodbye!")
+            break
+        else:
+            print("\nInvalid choice. Please enter a number from 0 to 5. ")
+            
+#Standard Idion: "only run main()
+if_name_=="_main_":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\nProgram interrupted by user. Goodbye!")
+    except SystemExit:
+        pass
+#SECTION 4 : GENERAL-PIRPOSE MATH FUNCTIONS
+def general_menu():
+    print_header("GENERAL-PURPOSE MATH FUNCTIONS")
+    print("""
+    1. Compute  ceil, floor, and trunc of value
+    2. Compute a factorial
+    3. Compute the hypotenuse of a right triangle
+    0. Back to Main Menu
+""")
+   choice = safe_input("Enter your choice: ").strip()
+   
+   if choice =='1':
+    x=get_float("Enter a decimal number x: ")
+    print(f"\n ceil({x}) = {math.ceil(x)}")
+    print(f"\ floor({x}) = {math.floor(x)}")
+    print(f"\ trunc({x}) = {amth.trunc(x)}")
+
+   elif choice =='2':
+    n=get_float("Enter a non-negative whole number: ")
+    try:
+        print(f"\n{n}! = {math.factorial(n)}")
+    except ValueError:
+        print("factorial(requires a non-negative integer.")
+        
+    elif choice =='3':
+        x = get_float("Enter the length of leg x: ")
+        y = get_float("Enter the length of leg y: ")
+        print(f"\n hypot({x}), {y}) = {math.hypot(x, y)}")
+        f"({mathsqrt(x**2 + y**2)}, but hypot() is more precise.)"
+        
+    elif choice =='0':
+        return
+    else:
+        print("\n Invalid choice.")
+        
+        
+       pause()
+
 #Standard Idion: "On"         
               
 
